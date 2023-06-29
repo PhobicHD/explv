@@ -2,7 +2,7 @@
 
 import { Position } from '../model/Position.js';
 
-const API_URL = "https://osrs-map.herokuapp.com/getPath";
+const API_URL = "http://insomnia247.nl:5080/v1/get_path";
 
 const errorMessageMapping = {
     "UNMAPPED_REGION": "Unmapped region",
@@ -21,16 +21,12 @@ export function getPath({start, end, onSuccess, onError}) {
         url: API_URL,
         type: 'POST',
         data: JSON.stringify({
-            "start": {
-                "x": start.x,
-                "y": start.y,
-                "z": start.z
-            },
-            "end": {
-                "x": end.x,
-                "y": end.y,
-                "z": end.z
-            }
+                "x_start": start.x,
+                "y_start": start.y,
+                "p_start": start.z
+                "x_end": end.x,
+                "y_end": end.y,
+                "p_end": end.z
         }),
         dataType: 'json',
         contentType: 'application/json',
