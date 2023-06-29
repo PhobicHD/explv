@@ -2,7 +2,7 @@
 
 import { Position } from '../model/Position.js';
 
-const API_URL = "http://insomnia247.nl:5080/v1/get_path";
+const API_URL = "http://insomnia247.nl:5079/v1/get_path";
 
 const errorMessageMapping = {
     "UNMAPPED_REGION": "Unmapped region",
