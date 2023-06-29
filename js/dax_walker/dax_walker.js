@@ -31,8 +31,8 @@ export function getPath({start, end, onSuccess, onError}) {
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
-            if (data['pathStatus'] !== "SUCCESS") {
-                onError(start, end, errorMessageMapping[data['pathStatus']]);
+            if (data['path'].length == 0) {
+                onError(start, end, "Path Generation Failed");
             } else {
                 const path = data['path'];
                 const pathPositions = path.map(pos => new Position(pos.x, pos.y, pos.p));
