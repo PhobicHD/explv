@@ -35,7 +35,7 @@ export function getPath({start, end, onSuccess, onError}) {
                 onError(start, end, errorMessageMapping[data['pathStatus']]);
             } else {
                 const path = data['path'];
-                const pathPositions = path.map(pos => new Position(pos.x, pos.y, pos.z));
+                const pathPositions = path.map(pos => new Position(pos.x, pos.y, pos.p));
                 onSuccess(pathPositions);
             }
         }
