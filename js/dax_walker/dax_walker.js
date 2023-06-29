@@ -17,6 +17,7 @@ const errorMessageMapping = {
 };
 
 export function getPath({start, end, onSuccess, onError}) {
+    var start_time = new Date().getTime();
     $.ajax({
         url: API_URL,
         type: 'POST',
@@ -31,6 +32,7 @@ export function getPath({start, end, onSuccess, onError}) {
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
+	    console.log("Path queried in: " + (new Date().getTime() - start_time));
             if (data['path'].length == 0) {
                 onError(start, end, "Path Generation Failed");
             } else {
