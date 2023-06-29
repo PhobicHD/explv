@@ -23,7 +23,7 @@ export function getPath({start, end, onSuccess, onError}) {
         data: JSON.stringify({
                 "x_start": start.x,
                 "y_start": start.y,
-                "p_start": start.z
+                "p_start": start.z,
                 "x_end": end.x,
                 "y_end": end.y,
                 "p_end": end.z
